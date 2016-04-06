@@ -49,18 +49,48 @@ session_start();
 			?>
             <div class="clear"></div>
         </div>
-        <div id="banner2">
-        	<?php
-            include("adminbanner-bottom.php");
+        <?php
+			if(isset($_SESSION["uid"]))
+			{
+				if(isset($_GET["id"]))
+				{
+					$id=$_GET["id"];
+					if($id=="insert")
+					{
+						include("insert.php");
+					}
+					else if($id=="newsletter")
+					{
+						include("newsletter.php");
+					}
+					else if($id=="edit")
+					{
+						include("edit.php");
+					}
+					else if($id=="delete")
+					{
+						include("delete.php");
+					}
+					echo "<div id='banner2'>";
+	            	include("adminbanner-bottom.php");
+			        echo "</div>";
+				}
+			}else{ ?>
+		        <div id='banner2'>
+		        	<?php
+		            	include("adminbanner-bottom.php");
+					?>
+			        <div class="clear"></div>
+		        </div>
+		     
+		        <div id="content">           	
+		            <?php
+		            include("admincontent.php");
+					?>
+		        </div>
+		    <?php
+			}
 			?>
-            <div class="clear"></div>
-        </div>
-     
-        <div id="content">           	
-            <?php
-            include("admin-footer1.php");
-			?>
-        </div>
         
         <div class="clear"></div>
         
