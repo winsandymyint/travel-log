@@ -4,32 +4,57 @@ session_start();
 <!DOCTYPE html>
 <html>
 <head>
+<title>Kate's Travel Records | Home</title>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
-
-<link rel="stylesheet" type="text/css" href="../css/allstyle.css" />
-<script type="text/javascript" src="../js/all.js"></script>
+<meta name="keywords" content=""/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<link href="../css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="../css/style.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="../css/flexslider.css" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="../css/JFFormStyle-1.css" />
+<!-- js -->
+<script src="../js/jquery.min.js"></script>
+<script src="../js/modernizr.custom.js"></script>
+<!-- //js -->
+<!-- fonts -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,700,500italic,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!-- //fonts -->	
+<script type="text/javascript">
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true   // 100% fit in a container
+			});
+		});
+	</script>
+<!--pop-up-->
+<script src="../js/menu_jquery.js"></script>
+<!--//pop-up-->	
 </head>
-
-<body>                       
+<body>             
 	<div id="wrapper">
-    		<div id="header">
-            	<?php
-                 include("../header.php");
-				?>
-            </div>
-            <div id="menu">
-            <?php
-                 include("adminmenu.php");
-				?>
-            </div>
-           <div id="allcontent">
-            <div id="left">
-            	<img src="../image/agra1.jpg" />
-                <img src="../image/agra1.jpg" />
-                <img src="../image/agra1.jpg" />
-                 <img src="../image/agra1.jpg" />
-            </div>
+		<div id="header">
+        	<?php
+             include("adminheader.php");
+			?>
+        </div>
+        <div id="banner">
+        	<?php
+            include("adminbanner.php");
+			?>
+            <div class="clear"></div>
+        </div>
+        <div id="banner2">
+        	<?php
+            include("adminbanner-bottom.php");
+			?>
+            <div class="clear"></div>
+        </div>
             <div id="right">
             	<div id="right_top">
             	<?php	               
@@ -45,30 +70,7 @@ session_start();
 				?>
                 </div>
                 <div id="right_bottom" align="center">
-                <?php
-					if(isset($_GET["insert_id"]))
-					{
-						$insert_id=$_GET["insert_id"];
-						if($insert_id=="country")
-						{
-							include("country.php");
-						}
-						else if($insert_id=="region")
-						{
-							include("region.php");
-						}
-						else if($insert_id=="city")
-						{
-							include("city.php");
-						}
-						else if($insert_id=="visit")
-						{
-							include("visit.php");
-						}
-					}				
-				
-				?>
-                </div>
+                
                 </div>
             </div>
             <div id="footer">

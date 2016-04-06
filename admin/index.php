@@ -58,7 +58,7 @@ session_start();
      
         <div id="content">           	
             <?php
-            include("admincontent.php");
+            include("admin-footer1.php");
 			?>
         </div>
         
