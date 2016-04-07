@@ -23,11 +23,11 @@ if($res > 0)
     move_uploaded_file($_FILES["f1"]["tmp_name"],"../image/".$img1);
 	move_uploaded_file($_FILES["f2"]["tmp_name"],"../image/".$img2);
 	move_uploaded_file($_FILES["f3"]["tmp_name"],"../image/".$img3);
-	header("Location:allInsert.php?errorno=2");
+	header("Location:allInsert.php?insert_id=city&errorno=2");
 
 }
 else
 {
-	header("Location:allInsert.php?errorno=3");
+	header("Location:allInsert.php?insert_id=city&errorno=3");
 }
 ?>

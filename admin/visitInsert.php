@@ -26,11 +26,11 @@ if($res > 0)
     move_uploaded_file($_FILES["hotelimg"]["tmp_name"],"../image/".$hotelimg);
 	move_uploaded_file($_FILES["restaurantimg"]["tmp_name"],"../image/".$restaurantimg);
 
-	header("Location:allInsert.php?errorno=2");
+	header("Location:allInsert.php?insert_id=visit&errorno=2");
 
 }
 else
 {
-	header("Location:allInsert.php?errorno=3");
+	header("Location:allInsert.php?insert_id=visit&errorno=3");
 }
 ?>

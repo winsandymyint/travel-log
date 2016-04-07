@@ -6,7 +6,7 @@
                     <div class="book-grids">
                         <div class="col-md-12">
                             <div class="book-left-info">
-                                <h3>View All Visit</h3>
+                                <h3>Edit a record</h3>
                             </div>
                             <div class="book-left-form">
                                 <div class="table-responsive">

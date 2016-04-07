@@ -37,7 +37,7 @@
                                                 echo  "<td>".$row["Formaladdress"]."</td>";
                                                 echo  "<td>".$row["Comment"]."</td>";
                                                 echo  "<td><img src='../".$row["Locationimage"]."' width='100px' height='100px' /></td>";
-                                                echo  "<td><a href='index.php?type=edit&id=$vid' class='btn btn-sm btn-color' role='button'>Edit</a>&nbsp;<a href='delete.php?type=delete&id=$vid' class='btn btn-sm btn-color' role='button'>Delete</a></td>";
+                                                echo  "<td><a href='allInsert.php?insert_id=visit&id=$vid' class='btn btn-sm btn-color' role='button'>Edit</a>&nbsp;<a href='delete.php?type=delete&id=$vid' class='btn btn-sm btn-color' role='button'>Delete</a></td>";
                                                 echo "</tr>";
                                             }
                                             ?>
