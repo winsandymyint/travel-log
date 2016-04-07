@@ -63,7 +63,7 @@ session_start();
 					{
 						include("newsletter.php");
 					}
-					else if($id=="edit")
+					else if($_GET["type"]=="edit")
 					{
 						include("edit.php");
 					}
@@ -71,10 +71,11 @@ session_start();
 					{
 						include("delete.php");
 					}
+					else if($id=="view-all")
+					{
+						include("view-all.php");
+					}
 				}
-				// echo "<div id='banner2'>";
-    //         	include("admincontent1.php");
-		  //       echo "</div>";
 			}else{ ?>
 		        <div id='banner2'>
 		        	<?php

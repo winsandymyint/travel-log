@@ -16,6 +16,7 @@
 		        <span class="menu"><img src="image/menu.png" alt="" /></span>
 		        <ul class="nav1">
 		        	<li class="active"><a href="index.php">Home</a></li> 
+		        	<li><a href="index.php?id=view-all">View All Visit</a></li>
 		        	<li><a href="index.php?id=insert">Insert</a></li>
 		        	<li><a href="index.php?id=newsletter">NewsLetter</a></li>
 		        	<li><a href="index.php?id=edit">Edit Visit</a></li>
