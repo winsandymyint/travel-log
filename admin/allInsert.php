@@ -36,7 +36,7 @@ session_start();
 <script src="../js/menu_jquery.js"></script>
 <!--//pop-up-->	
 </head>
-<body>             
+<body>
 	<div id="wrapper">
 		<div id="header">
         	<?php
@@ -49,54 +49,56 @@ session_start();
 			?>
             <div class="clear"></div>
         </div>
-        <div id="banner2">
+        <?php
+			if(isset($_SESSION["uid"]))
+			{
+				include("insert.php");
+			}
+		?>
+        
+        <div class="clear"></div>
+        
+        <div id="footer">
         	<?php
-            include("adminbanner-bottom.php");
+            include("adminfooter.php");
 			?>
-            <div class="clear"></div>
         </div>
-            <div id="right">
-            	<div id="right_top">
-            	<?php	               
-				if(isset($_SESSION["uid"]))
-				{						
-					include("insert.php");
-					}
-				else
-				{
-				/*echo '<script>alert("Please Login!")</script>';*/
-               	 include("login.php");
-				}
-				?>
-                </div>
-                <div id="right_bottom" align="center">
-                
-                </div>
-            </div>
-            <div id="footer">
-            	<?php
-                include("../footer.php");
-				?>
-            </div>
     </div>
-</body>
-<?php
-if(isset($_GET["errorno"]))
-{
-	$error=$_GET["errorno"];
-	if($error==1)
-	{
-		echo '<script>alert("Image Error !");window.history.go(-1);</script>';
-	}
-	if($error==2)
-	{
-		echo '<script>alert("Success !");window.history.go(-1);</script>';
-	}
-	if($error==3)
-	{
-		echo '<script>alert("Fail !");window.history.go(-1);</script>';
-	}
-	
-}
-?>
+	<script defer src="../js/jquery.flexslider.js"></script>
+	<script src="../js/easyResponsiveTabs.js" type="text/javascript"></script>
+	<script src="../js/jquery-ui.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			SyntaxHighlighter.all();
+			});
+			$(window).load(function(){
+			$('.flexslider').flexslider({
+			animation: "slide",
+			start: function(slider){
+			$('body').removeClass('loading');
+			}
+			});
+		});
+	</script>		
+    </body>
+    <?php
+    if(isset($_GET["errorno"]))
+    {
+    	$error=$_GET["errorno"];
+    	if($error==1)
+    	{
+    		echo '<script>alert("Image Error !");window.history.go(-1);</script>';
+    	}
+    	if($error==2)
+    	{
+    		echo '<script>alert("Success !");window.history.go(-1);</script>';
+    	}
+    	if($error==3)
+    	{
+    		echo '<script>alert("Fail !");window.history.go(-1);</script>';
+    	}
+    	
+    }
+    ?>
 </html>
