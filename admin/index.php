@@ -55,26 +55,28 @@ session_start();
 				if(isset($_GET["id"]))
 				{
 					$id=$_GET["id"];
-					if($id=="insert")
-					{
-						include("insert.php");
-					}
-					else if($id=="newsletter")
+					if($id=="newsletter")
 					{
 						include("newsletter.php");
-					}
-					else if($_GET["type"]=="edit")
-					{
-						include("edit.php");
-					}
-					else if($id=="delete")
-					{
-						include("delete.php");
-					}
-					else if($id=="view-all")
-					{
-						include("view-all.php");
-					}
+					}if($id=="insert")
+			        {
+			        	include("insert.php");
+			        }else if($_GET["type"]=="edit")
+			        {
+			        	include("edit.php");
+			        }
+			        else if($id=="delete")
+			        {
+			        	include("delete.php");
+			        }
+			        else if($id=="view-all")
+			        {
+			        	include("view-all.php");
+			        }
+				}else{
+					echo "<div id='banner2'>";
+			        include('view-all.php');
+				    echo "<div class='clear'></div></div>";
 				}
 			}else{ ?>
 		        <div id='banner2'>
