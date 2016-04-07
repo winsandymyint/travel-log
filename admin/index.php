@@ -71,10 +71,10 @@ session_start();
 					{
 						include("delete.php");
 					}
-					echo "<div id='banner2'>";
-	            	include("adminbanner-bottom.php");
-			        echo "</div>";
 				}
+				// echo "<div id='banner2'>";
+    //         	include("admincontent1.php");
+		  //       echo "</div>";
 			}else{ ?>
 		        <div id='banner2'>
 		        	<?php
