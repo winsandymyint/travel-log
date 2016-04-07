@@ -78,34 +78,39 @@
     include("../db.php");
 	$str="SELECT Visitid,Countryid,Regionid,Cityid,VisitDate,GeoInfo,Comment,Hotelimg,Restaurantimg FROM visit";
 	$res=mysql_query($str,$con);
-	echo '<table class="table"><tr>
-					<th><label  class="lbl">No </label></th>					
-					<th><label class="lbl">Countryid</label> </th>
-					<th><label class="lbl">Regionid</label> </th>
-					<th><label class="lbl">Cityid</label> </th>
-					<th><label class="lbl">VisitDate</label> </th>
-					<th><label class="lbl">GeoInfo</label> </th>
-					<th><label class="lbl">Comment</label> </th>
-					<th><label class="lbl">Hotel Image</label> </th>
-					<th><label class="lbl">Restaurant Image</label> </th>
-				
-    			</tr>';
-				$i=0;
-	while($row=mysql_fetch_array($res))
-	{
-	
-			echo '<tr align="center">
-					<td><label  class="lbl">'.++$i.'</label></td>
-					<td><label class="lbl">'.$row["Countryid"].' </label> </td>
-					<td><label class="lbl">'.$row["Regionid"].' </label> </td>
-					<td><label class="lbl">'.$row["Cityid"].' </label> </td>
-					<td><label class="lbl">'.$row["VisitDate"].' </label> </td>
-					<td><label class="lbl">'.$row["GeoInfo"].' </label> </td>
-					<td><label class="lbl">'.$row["Comment"].' </label> </td>
-					<td><label class="lbl"><img src="../'.$row["Hotelimg"].'" width="100px" height="100px"> </label> </td>
-					<td><label class="lbl"><img src="../'.$row["Restaurantimg"].'" width="100px" height="100px">  </label> </td>
+	$rowCount = mysql_num_rows($res);
+	if($rowCount> 0){
+		echo '<table class="table"><tr>
+						<th><label  class="lbl">No </label></th>					
+						<th><label class="lbl">Countryid</label> </th>
+						<th><label class="lbl">Regionid</label> </th>
+						<th><label class="lbl">Cityid</label> </th>
+						<th><label class="lbl">VisitDate</label> </th>
+						<th><label class="lbl">GeoInfo</label> </th>
+						<th><label class="lbl">Comment</label> </th>
+						<th><label class="lbl">Hotel Image</label> </th>
+						<th><label class="lbl">Restaurant Image</label> </th>
+					
+	    			</tr>';
+					$i=0;
+		while($row=mysql_fetch_array($res))
+		{
 		
-    			</tr>';
+				echo '<tr align="center">
+						<td><label  class="lbl">'.++$i.'</label></td>
+						<td><label class="lbl">'.$row["Countryid"].' </label> </td>
+						<td><label class="lbl">'.$row["Regionid"].' </label> </td>
+						<td><label class="lbl">'.$row["Cityid"].' </label> </td>
+						<td><label class="lbl">'.$row["VisitDate"].' </label> </td>
+						<td><label class="lbl">'.$row["GeoInfo"].' </label> </td>
+						<td><label class="lbl">'.$row["Comment"].' </label> </td>
+						<td><label class="lbl"><img src="../'.$row["Hotelimg"].'" width="100px" height="100px"> </label> </td>
+						<td><label class="lbl"><img src="../'.$row["Restaurantimg"].'" width="100px" height="100px">  </label> </td>
+			
+	    			</tr>';
+		}
+		echo '</table>';
+	}else{
+		echo "<h3 style='width: 100%; height: 50px; border: 1px solid #ddd; background: #f2f2f2; text-align: center; padding: 10px;'>There's no record. Please insert new.</h3>";
 	}
-	echo '</table>';
 	?>

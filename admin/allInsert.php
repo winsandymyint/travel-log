@@ -36,33 +36,81 @@ session_start();
 <script src="../js/menu_jquery.js"></script>
 <!--//pop-up-->	
 </head>
-<body>
-	<div id="wrapper">
-		<div id="header">
-        	<?php
-             include("adminheader.php");
-			?>
-        </div>
-        <div id="banner">
-        	<?php
-            include("adminbanner.php");
-			?>
-            <div class="clear"></div>
-        </div>
-        <?php
-			if(isset($_SESSION["uid"]))
-			{
-				include("insert.php");
-			}
-		?>
-        
-        <div class="clear"></div>
-        
-        <div id="footer">
-        	<?php
-            include("adminfooter.php");
-			?>
-        </div>
+<body>                   
+		<div id="wrapper">
+			<div id="header">
+	        	<?php
+	             include("adminheader.php");
+				?>
+	        </div>
+	        <div id="banner">
+	        	<?php
+	            include("adminbanner.php");
+				?>
+	            <div class="clear"></div>
+	        </div>
+	        <!-- banner-bottom -->
+	        <div class="banner-bottom">
+	            <!-- container -->
+	            <div class="container">
+	                <div class="faqs-top-grids">
+	                    <div class="book-grids">
+	                        <div class="col-md-12">
+	                            <div class="book-left-info">
+	                                <h3>Inserting new record.</h3>
+	                                <select onchange="location = this.value;">
+	                                  <option value="allInsert.php?insert_id=country"><h3><a href="allInsert.php?insert_id=country" class="btn">Country</a></h3></option>
+	                                  <option value="allInsert.php?insert_id=city"><h3><a href="allInsert.php?insert_id=city" class="btn">City</a></h3></option>
+	                                  <option value="allInsert.php?insert_id=region"><h3><a href="allInsert.php?insert_id=region" class="btn">Region</a></h3></option>
+	                                  <option value="allInsert.php?insert_id=visit"><h3><a href="allInsert.php?insert_id=visit" class="btn">Visit</a></h3></option>
+	                                </select>
+	                            </div>
+	                            <div class="book-left-form">
+	                                    <div style='width: 100%; height: auto; border: 1px dotted #ddd; background: transparent; padding: 30px;'> 
+                        	            	<?php	               
+                        					if(isset($_SESSION["uid"]))
+                        					{						
+                        						// include("insert.php");
+                        						if(isset($_GET["insert_id"]))
+                        						{
+                        							$insert_id=$_GET["insert_id"];
+                        							if($insert_id=="country")
+                        							{
+                        								include("country.php");
+                        							}
+                        							else if($insert_id=="region")
+                        							{
+                        								include("region.php");
+                        							}
+                        							else if($insert_id=="city")
+                        							{
+                        								include("city.php");
+                        							}
+                        							else if($insert_id=="visit")
+                        							{
+                        								include("visit.php");
+                        							}
+                        						}
+                        					}
+                        					else
+                        					{
+                        	               	 // include("login.php");
+                        					}
+                        					?>
+	                                    </div>
+	                            </div>
+	                        </div>
+	                        <div class="clearfix"> </div>
+	                    </div>
+	                </div>
+	            </div>
+	            <!-- //container -->
+	        </div>
+            <div id="footer">
+            	<?php
+                include("../footer.php");
+				?>
+            </div>
     </div>
 	<script defer src="../js/jquery.flexslider.js"></script>
 	<script src="../js/easyResponsiveTabs.js" type="text/javascript"></script>
@@ -82,23 +130,4 @@ session_start();
 		});
 	</script>		
     </body>
-    <?php
-    if(isset($_GET["errorno"]))
-    {
-    	$error=$_GET["errorno"];
-    	if($error==1)
-    	{
-    		echo '<script>alert("Image Error !");window.history.go(-1);</script>';
-    	}
-    	if($error==2)
-    	{
-    		echo '<script>alert("Success !");window.history.go(-1);</script>';
-    	}
-    	if($error==3)
-    	{
-    		echo '<script>alert("Fail !");window.history.go(-1);</script>';
-    	}
-    	
-    }
-    ?>
 </html>

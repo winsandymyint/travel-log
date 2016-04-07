@@ -6,21 +6,18 @@
                     <div class="book-grids">
                         <div class="col-md-12">
                             <div class="book-left-info">
-                                <h3>Insert New Record</h3>
+                                <h3>View All Visit</h3>
                             </div>
                             <div class="book-left-form">
                                 <div class="table-responsive">
-                                	<?php 
-                                		if(isset($_SESSION["uid"]))
-                                		{
-                            				$id=$_GET["insert_id"];
-                            				if($id){
-                            					echo "YES";
-                            				}else{
-                            					echo "NO";
-                            				}
-                                		}
-                                	?>
+                                    <div>
+                                        <p>
+                                        <a href="allInsert.php?insert_id=country" class="btn">Country</a>
+                                        <a href="allInsert.php?insert_id=region" class="btn">Region</a>
+                                        <a href="allInsert.php?insert_id=city" class="btn">City</a>
+                                        <a href="allInsert.php?insert_id=visit" class="btn">Visit</a>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -30,4 +27,3 @@
             </div>
             <!-- //container -->
         </div>
-        <!-- //banner-bottom -->
