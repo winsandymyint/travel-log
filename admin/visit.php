@@ -6,14 +6,17 @@
     		$id= $_GET["id"];
     		$str="SELECT * FROM visit WHERE Visitid= $id";
     		$res=mysql_query($str,$con);
-    		$Trow=mysql_fetch_array($res);
-    		$rowCount = mysql_num_rows($res);
+    		// $Trow=mysql_fetch_array($res);
+    		// $rowCount = mysql_num_rows($res);
     		$TrowArray= [];
-    		while($a=mysql_fetch_array($res))
+    		echo mysql_fetch_array($res)[0];
+    		echo "hi";
+    		while($row=mysql_fetch_array($res))
     		{
-    			echo a; 
+    			echo $row;
+    			echo "<br />hi 2<br />";
     		}
-    		print_r($Trow[0].Countryid);
+    		// print_r($Trow[0].Countryid);
     ?>
     		<form method="post" action="visitInsert.php" enctype="multipart/form-data">
     			<p>Country</p>
@@ -23,15 +26,15 @@
     		        include("../db.php");
     				$str="SELECT Countryid,Country FROM countrytb";
     				$res=mysql_query($str,$con);
-    				echo "<br />";
-    				echo $Trow[0].Countryid;
-    				echo "<br />HI:";
+    				// echo "<br />";
+    				// echo $Trow[0].Countryid;
+    				// echo "<br />HI:";
     				// echo $row['Countryid'];
     				$row= mysql_fetch_array($res);
     				// print_r($Trow);
-					echo "::KJFEk;ew <br />";
-					echo mysql_num_rows($res);
-					echo "::KJFEk;ew <br />";
+					// echo "::KJFEk;ew <br />";
+					// echo mysql_num_rows($res);
+					// echo "::KJFEk;ew <br />";
     				while($row=mysql_fetch_array($res))
     				{	
     						echo "<br />";
