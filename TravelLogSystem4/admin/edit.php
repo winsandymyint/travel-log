@@ -13,7 +13,6 @@
 				}
 				?>
             </select>
-          
         </p>
         <div id="view"></div>
         <p><input type="submit" value="Edit" class="btn"/></p>

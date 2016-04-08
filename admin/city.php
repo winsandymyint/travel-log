@@ -1,56 +1,42 @@
 <form method="post" action="cityInsert.php" enctype="multipart/form-data">
-<table>
-	<tr>
-    	<td><label for="city" class="lbl">City</label></td> 
-        <td><input type="text" name="city" id="city" class="form-control s1" required/></td>
-    </tr>
-    <tr>
-    	<td><label for="country" class="lbl">Country</label>  </td>
-        <td> <select name="countryid" id="country" class="form-control s1" required>
-        		<option value="">Please Select Country</option>
-            	<?php
-                include("../db.php");
-				$str="SELECT Countryid,Country FROM countrytb";
-				$res=mysql_query($str,$con);
-				while($row=mysql_fetch_array($res))
-				{
-					echo '<option value="'.$row["Countryid"].'">'.$row["Country"].'</option>';
-				}
-				?>
-            </select></td>
-    </tr>
-    <tr>
-    	<td><label for="region" class="lbl">Region</label>  </td>
-        <td> <select name="regionid" id="region" class="form-control s1" required>
-        		<option value="">Please Select Region</option>
-            	<?php
-                include("../db.php");
-				$str="SELECT Regionid,Region FROM regiontb";
-				$res=mysql_query($str,$con);
-				while($row=mysql_fetch_array($res))
-				{
-					echo '<option value="'.$row["Regionid"].'">'.$row["Region"].'</option>';
-				}
-				?>
-            </select></td>
-    </tr>
-    <tr>
-    	<td><label for="image1" class="lbl">City Image1 </label></td>
-        <td> <input type="file" name="f1" id="image1" class="form-control s1" required/></td>
-    </tr>
-    <tr>
-    	<td><label for="image2" class="lbl">City Image2 </label></td>
-        <td><input type="file" name="f2" id="image2" class="form-control s1" required/></td>
-    </tr>
-    <tr>
-    	<td><label for="image3" class="lbl">City Image3 </label></td>
-       <td> <input type="file" name="f3" id="image3" class="form-control s1" required/></td>
-    </tr>
-    <tr>
-    	<td colspan="2"><input type="submit" value="Add" class="btn"/></p></td>  
-    </tr>
-</table>
-    </form>
+<p>City</p>
+<input type="text" name="city" id="city" placeholder="Type a city name" class="form-control s1" required/>
+<p>Country</p>
+<select name="countryid" id="country" class="form-control s1" required>
+	<option value="">Please Select Country</option>
+	<?php
+    include("../db.php");
+	$str="SELECT Countryid,Country FROM countrytb";
+	$res=mysql_query($str,$con);
+	while($row=mysql_fetch_array($res))
+	{
+		echo '<option value="'.$row["Countryid"].'">'.$row["Country"].'</option>';
+	}
+	?>
+</select>
+<p>Region</p>
+<select name="regionid" id="region" class="form-control s1" required>
+	<option value="">Please Select Region</option>
+	<?php
+    include("../db.php");
+	$str="SELECT Regionid,Region FROM regiontb";
+	$res=mysql_query($str,$con);
+	while($row=mysql_fetch_array($res))
+	{
+		echo '<option value="'.$row["Regionid"].'">'.$row["Region"].'</option>';
+	}
+	?>
+</select>
+<p>City Image1</p>
+<input type="file" name="f1" id="image1" class="form-control s1" required/>
+<p>City Image2</p>
+<input type="file" name="f2" id="image2" class="form-control s1" required/>
+<p>City Image3</p>
+<input type="file" name="f3" id="image3" class="form-control s1" required/>
+<input type="submit" value="Add" class="btn"/>
+</form>
+<div style="width: 100%; height: 10px;"></div>
+<div style="width: 100%; height: 10px;"></div>
     <?php
     include("../db.php");
 	$str="select Cityid,City,Countryid,Regionid,Cityimg1,Cityimg2,Cityimg3 from citytb";

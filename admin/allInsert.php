@@ -58,11 +58,11 @@ session_start();
 	                        <div class="col-md-12">
 	                            <div class="book-left-info">
 	                                <h3>Inserting new record.</h3>
-	                                <select onchange="location = this.value;">
-	                                  <option value="allInsert.php?insert_id=country"><h3><a href="allInsert.php?insert_id=country" class="btn">Country</a></h3></option>
-	                                  <option value="allInsert.php?insert_id=city"><h3><a href="allInsert.php?insert_id=city" class="btn">City</a></h3></option>
-	                                  <option value="allInsert.php?insert_id=region"><h3><a href="allInsert.php?insert_id=region" class="btn">Region</a></h3></option>
-	                                  <option value="allInsert.php?insert_id=visit"><h3><a href="allInsert.php?insert_id=visit" class="btn">Visit</a></h3></option>
+	                                <select onchange="location = this.value;" class="form-control s1" >
+	                                  <option value="allInsert.php?insert_id=country"><h3>Country</h3></option>
+	                                  <option value="allInsert.php?insert_id=city"><h3>City</h3></option>
+	                                  <option value="allInsert.php?insert_id=region"><h3>Region</h3></option>
+	                                  <option value="allInsert.php?insert_id=visit"><h3>Visit</h3></option>
 	                                </select>
 	                            </div>
 	                            <div class="book-left-form">
